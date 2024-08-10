@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RAID Calculator</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>RAID Calculator</h1>
+        </div>
+        <div class="app">
+            <form id="calculator">
+                <label for="drivecount">Drive Count: </label>
+                <input type="number" name="drivecount" id="drivecount" required><br>
+
+                <label for="drivesize">Drive Size (TB): </label>
+                <input type="number" name="drivesize" id="drivesize" required><br>
+
+                <label for="raidtype">Raid Type: </label>
+                <select id="raidtype" name="raidtype" required>
+                    <option value="raid0">RAID 0 (Stripe)</option>
+                    <option value="raid1">RAID 1 (Mirror)</option>
+                    <option value="raid5">RAID 5 (Stripe + Parity)</option>
+                    <option value="raid6">RAID 6 (Stripe + Dual Parity)</option>
+                </select><br>
+
+                <input type="submit" value="Calculate">
+            </form>
+
+            <p id="raw"></p>
+            <p id="capacity"></p>
+            <p id="failures"></p>
+
+            <script src="calculator.js"></script>
+        </div>
+    </div>
+</body>
+</html>
